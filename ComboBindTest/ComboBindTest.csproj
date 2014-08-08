@@ -68,7 +68,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CurrentValueConverter.cs" />
+    <Compile Include="Model\ButtonContentTemplateSelector.cs" />
+    <Compile Include="Model\ContentTemplate.cs" />
+    <Compile Include="Model\LandClassDataTemplateSelector.cs" />
+    <Compile Include="Model\MultiValueConverter.cs" />
+    <Compile Include="Model\CurrentValueConverter.cs" />
+    <Compile Include="Model\CurrentLandClassStyleSelector.cs" />
+    <Compile Include="Model\dataItem.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Window1.xaml.cs">
@@ -86,6 +92,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Window1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
