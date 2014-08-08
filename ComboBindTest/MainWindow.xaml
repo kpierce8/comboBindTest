@@ -14,15 +14,15 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <!--<model:CurrentValueConverter x:Key="CurrentValueConverter"
-                  ButtonControlTemplate1="{StaticResource ButtonControlTemplate1}"
-                  ButtonControlTemplate2="{StaticResource ButtonControlTemplate2}"    />-->
-            <!--<model:MultiValueConverter x:Key="CLCConverter"/>-->
             <model:LandClassDataTemplateSelector
         DataTemplateTree="{StaticResource DataTemplateTree}"
         DataTemplateGrass="{StaticResource DataTemplateGrass}"
         DataTemplateUrban="{StaticResource DataTemplateUrban}"
                  x:Key="lcTemplateSelector" />
+            <model:ButtonChromeStyleSelector
+                ButtonStyle1="{StaticResource ButtonChromeStyle1}"
+                 ButtonStyle2="{StaticResource ButtonChromeStyle2}"
+                x:Key="bcStyleSelector"/>
             <DataTemplate x:Key="DataTemplate1">
             	<Grid Background="#FFCF1C1C" Margin="0,-3,-12,-4"/>
             </DataTemplate>
@@ -31,16 +31,16 @@
     <Grid DataContext="{Binding Main, Mode=OneWay, Source={StaticResource Locator}}">
         <Button Content="Option 1" HorizontalAlignment="Left"  Margin="60,23,0,0" VerticalAlignment="Top" 
 		Width="107" Height="46" Command="{Binding MyCommand, Mode=OneWay}" 
-		CommandParameter="1"  Style="{DynamicResource ButtonStyle3}"/>
+		CommandParameter="1" Style="{DynamicResource ButtonStyle1}"/>
 
         <Button Content="Option 2" HorizontalAlignment="Left" Margin="60,74,0,0" VerticalAlignment="Top" 
                 Width="91" Height="39" 
                 Command="{Binding MyCommand, Mode=OneWay}" CommandParameter="2" 
-                Tag="{Binding Path=theList/landCLass}" Template="{DynamicResource ButtonControlTemplate1}"
+                Tag="{Binding Path=theList/landCLass}" Template="{DynamicResource ButtonControlTemplate1}" 
                />
 
 
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Center" Height="38" Width="54" Text="{Binding theList/landCLass}" TextAlignment="Center" />
+        <TextBlock HorizontalAlignment="Center"   TextWrapping="Wrap"  VerticalAlignment="Center" Height="38" Width="54" Text="{Binding theList/landCLass}" TextAlignment="Center" />
         <Button Content="Option 3" HorizontalAlignment="Left" Margin="60,118,0,0" VerticalAlignment="Top" Width="92" Height="39" Template="{DynamicResource ButtonControlTemplate1}" Command="{Binding MyCommand, Mode=OneWay}" CommandParameter="3"/>
 
 
@@ -49,6 +49,8 @@
                  
                  IsSynchronizedWithCurrentItem="True"
                  Height="100" Margin="288,36,0,0" VerticalAlignment="Top" Width="100" ItemTemplateSelector="{StaticResource lcTemplateSelector}"/>
+
+        <Button Content="Button 4" HorizontalAlignment="Left" Margin="190,136,0,0" VerticalAlignment="Top" Width="75"></Button>
 
 
     </Grid>

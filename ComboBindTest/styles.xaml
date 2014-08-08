@@ -20,8 +20,10 @@
 		<GradientStop Color="#FF473333" Offset="1"/>
 	</LinearGradientBrush>
 	<Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+
+
 		<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
-		<Setter Property="Background"   Value="{StaticResource ButtonNormalBackground}"/>
+		<Setter Property="Background"   Value="#FFE02E2E"/>
 		<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
 		<Setter Property="BorderThickness" Value="5"/>
 		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
@@ -49,12 +51,6 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
-	<LinearGradientBrush x:Key="Brush1" EndPoint="0,1" StartPoint="0,0">
-		<GradientStop Color="#F300FF" Offset="0"/>
-		<GradientStop Color="#EBEBEB" Offset="0.5"/>
-		<GradientStop Color="#FF66F7F1" Offset="0.5"/>
-		<GradientStop Color="#FF334746" Offset="1"/>
-	</LinearGradientBrush>
 	<DataTemplate x:Key="DataTemplateTree">
 
 		<StackPanel Orientation="Horizontal">

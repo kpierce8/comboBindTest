@@ -68,12 +68,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\ButtonContentTemplateSelector.cs" />
+    <Compile Include="Model\ButtonChromeStyleSelector.cs" />
     <Compile Include="Model\ContentTemplate.cs" />
     <Compile Include="Model\LandClassDataTemplateSelector.cs" />
     <Compile Include="Model\MultiValueConverter.cs" />
     <Compile Include="Model\CurrentValueConverter.cs" />
-    <Compile Include="Model\CurrentLandClassStyleSelector.cs" />
     <Compile Include="Model\dataItem.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
