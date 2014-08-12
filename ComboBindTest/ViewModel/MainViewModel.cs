@@ -4,6 +4,7 @@ using ComboBindTest.Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Data;
+using System.Windows;
 
 namespace ComboBindTest.ViewModel
 {
@@ -43,6 +44,7 @@ namespace ComboBindTest.ViewModel
             theList.Add(new dataItem(2));
             changeView = CollectionViewSource.GetDefaultView(theList);
             
+            
         }
 
         /// <summary>
@@ -74,6 +76,7 @@ namespace ComboBindTest.ViewModel
                 _myProperty = value;
                 ((dataItem)changeView.CurrentItem).landCLass = value;
                 RaisePropertyChanged(MyPropertyPropertyName);
+                MessageBox.Show("yo4");
             }
         }
 

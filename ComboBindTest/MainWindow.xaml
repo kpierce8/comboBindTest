@@ -19,34 +19,34 @@
         DataTemplateGrass="{StaticResource DataTemplateGrass}"
         DataTemplateUrban="{StaticResource DataTemplateUrban}"
                  x:Key="lcTemplateSelector" />
-            <model:ButtonChromeStyleSelector
+            <!--<model:ButtonChromeStyleSelector
                 ButtonStyle1="{StaticResource ButtonChromeStyle1}"
                  ButtonStyle2="{StaticResource ButtonChromeStyle2}"
-                x:Key="bcStyleSelector"/>
+                x:Key="bcStyleSelector"/>-->
             <DataTemplate x:Key="DataTemplate1">
             	<Grid Background="#FFCF1C1C" Margin="0,-3,-12,-4"/>
             </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
     <Grid DataContext="{Binding Main, Mode=OneWay, Source={StaticResource Locator}}">
-        <Button Content="Option 1" HorizontalAlignment="Left"  Margin="60,23,0,0" VerticalAlignment="Top" 
-		Width="107" Height="46" Command="{Binding MyCommand, Mode=OneWay}" 
-		CommandParameter="1" Style="{DynamicResource ButtonStyle1}"/>
+        <Button Name="Button1" Content="Option 1" HorizontalAlignment="Left"  Margin="60,23,0,0" VerticalAlignment="Top" 
+		Width="91" Height="46" Command="{Binding MyCommand, Mode=OneWay}" 
+		CommandParameter="1" ForceCursor="True" Style="{DynamicResource ButtonStyle1}"/>
 
-        <Button Content="Option 2" HorizontalAlignment="Left" Margin="60,74,0,0" VerticalAlignment="Top" 
+        <Button Name="Button2" Content="Option 2" HorizontalAlignment="Left" Margin="60,74,0,0" VerticalAlignment="Top" 
                 Width="91" Height="39" 
                 Command="{Binding MyCommand, Mode=OneWay}" CommandParameter="2" 
-                Tag="{Binding Path=theList/landCLass}" Template="{DynamicResource ButtonControlTemplate1}" 
+                Tag="{Binding Path=theList/landCLass}"  Style="{DynamicResource ButtonStyle1}" 
                />
 
 
-        <TextBlock HorizontalAlignment="Center"   TextWrapping="Wrap"  VerticalAlignment="Center" Height="38" Width="54" Text="{Binding theList/landCLass}" TextAlignment="Center" />
-        <Button Content="Option 3" HorizontalAlignment="Left" Margin="60,118,0,0" VerticalAlignment="Top" Width="92" Height="39" Template="{DynamicResource ButtonControlTemplate1}" Command="{Binding MyCommand, Mode=OneWay}" CommandParameter="3"/>
+        <TextBlock Name="LandCoverTextBlock" HorizontalAlignment="Center"   TextWrapping="Wrap"  VerticalAlignment="Center" Height="38" Width="54" Text="{Binding theList/landCLass}" TextAlignment="Center" TextInput="TextBlock_TextInput" DataContextChanged="TextBlock_DataContextChanged"/>
+        <Button Name="Button3" Content="Option 3" HorizontalAlignment="Left" Margin="60,118,0,0" VerticalAlignment="Top" Width="92" Height="39"  Command="{Binding MyCommand, Mode=OneWay}" CommandParameter="3" Style="{DynamicResource ButtonStyle1}"/>
 
 
         <ListBox Name="mainLB" HorizontalAlignment="Left" 
                  ItemsSource="{Binding changeView}"
-                 
+                 SelectionChanged="mainLB_SelectionChanged"
                  IsSynchronizedWithCurrentItem="True"
                  Height="100" Margin="288,36,0,0" VerticalAlignment="Top" Width="100" ItemTemplateSelector="{StaticResource lcTemplateSelector}"/>
 
